@@ -1,4 +1,4 @@
-# Alternating Learning Rates in Neural Networks: Experiments and Implications:
+# Alternating Opposing Learning Rates in Neural Networks: Experiments and Implications:
 This repository contains code and documentation for a series of experiments exploring the effects of alternating positive and negative learning rates during neural network training. These experiments were inspired by a conversation with Grok, an AI built by xAI, and cover topics from basic convergence in linear models to continual learning in autoencoders on synthetic data mimicking MNIST classes.
 The key insight is that alternating learning rates (positive on even epochs, negative on odd epochs) can lead to slow but eventual convergence in convex problems, but behaves differently in non-convex settings. In continual learning, it promotes "shallower" minima, aiding faster adaptation to new tasks with less catastrophic forgetting compared to positive-only training.
 
