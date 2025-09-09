@@ -21,6 +21,14 @@ The key insight is that alternating learning rates (positive on even epochs, neg
   - Negative-only pretrain + positive adapt: Diverges in pretrain, adapts faster (~25 epochs), but no retention of Class 0.
   - Positive-only pretrain + positive adapt: Fast pretrain, adapts slower (~40 epochs), more forgetting (~0.180 loss on Class 0).
 - **Implications**: Alternating rates create less committed minima, balancing retention and adaptability in continual learning—potentially useful for lifelong learning systems, though slower initially.
+**Experiment 4: Pretrain Proxy**
+- **Setup**: Minimal network trained on mnist with either standard positive learning rate or alternating learning rates.
+- **Variants**:
+  - Alternating pretrain + positive adapt: Slow pretrain, adapts in 27 epochs, moderate forgetting 
+  - Positive-only pretrain + positive adapt: Fast pretrain, adapts slower (~100-200 epochs)
+- **Implications**: As a proxy for pretraining or continual learning this experiment demonstrates strongly the advantage to pretraining with alternating learning rates.
+  
+<img width="1389" height="590" alt="opposing-alternating-learning-rates" src="https://github.com/user-attachments/assets/2b0f9cd9-8a68-4e78-b4c9-9304c4b3437f" />
 
 ## Implications
 These experiments suggest alternating learning rates could be a novel regularization technique for continual learning, reducing overfitting to initial tasks and easing transfer. However, it slows convergence and fails in highly non-convex settings. Related research (e.g., machine unlearning with negative gradients) supports using negative steps for "forgetting," but alternation on the same task is underexplored. Future work could combine this with methods like Elastic Weight Consolidation for better continual performance. In practice, use small rates and monitor oscillations; not recommended for standard training.
