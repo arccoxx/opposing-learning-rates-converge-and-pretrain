@@ -21,6 +21,7 @@ The key insight is that alternating learning rates (positive on even epochs, neg
   - Negative-only pretrain + positive adapt: Diverges in pretrain, adapts faster (~25 epochs), but no retention of Class 0.
   - Positive-only pretrain + positive adapt: Fast pretrain, adapts slower (~40 epochs), more forgetting (~0.180 loss on Class 0).
 - **Implications**: Alternating rates create less committed minima, balancing retention and adaptability in continual learning—potentially useful for lifelong learning systems, though slower initially.
+  
 **Experiment 4: Pretrain Proxy**
 - **Setup**: Minimal network trained on mnist with either standard positive learning rate or alternating learning rates.
 - **Variants**:
